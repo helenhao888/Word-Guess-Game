@@ -1,0 +1,85 @@
+.myname{
+    background-color:#4aaaa5;
+    font-weight:bold;
+    color:white;
+    padding:10px;  
+    height:auto;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    font-size:32px;
+    text-transform:uppercase;
+    border:0px;
+}
+
+.linkitems{
+    margin:auto;
+}
+a:link{
+    color:blue;
+    }
+a:visited{
+    color:palevioletred;
+    }
+a:hover{
+    background-color:yellow;
+    
+}
+
+a:active{
+    color:red;
+}
+
+
+.wholebody{
+    
+    background-image: url("../images/interlaced.png");
+    background-color:#ffffff;
+    top: 15px;
+    width: 100%; 
+    overflow: auto;
+    min-height:100%;
+    margin-bottom:-40px;
+    font-family:"Arial', 'Helvetica Neue', Helvetica, sans-serif";
+     }
+
+.maincontent{
+    max-width:960px;
+}
+
+.wholebody:after {
+content:"";
+display:block;
+}
+
+.footer, .wholebody:after{
+height:40px;
+}
+
+
+    
+
+.row, 
+.row> .column
+{
+       padding:4px 8px;
+}
+
+.footer{
+
+        clear: both;
+        background:#4aaaa5;
+
+        width: 100%;
+
+}
+
+.copyright{
+        background:grey;
+        color:white;
+        height:30px;
+        position:relative;
+        top:10px;
+        text-align:center;
+        width:100%;
+        margin-left:0;
+        margin-right:0;
+}

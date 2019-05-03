@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Word Guess Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+    
+        <header class="container">
+            <div class="row">
+                <div class="col-12 col-sm-10 col-md-5 col-lg-4">
+                        <button type="button" class="btn btn-primary btn-lg myname">Word Guess</button>
+                </div>
+                <div class="col-12 col-sm-10 col-md-7 col-lg-8 linkitems">
+               
+                      <ul class="nav justify-content-end ">
+                          <li class="nav-item">
+                            <a class="nav-link active" href="#">About</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Rule</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                          </li>
+                          
+                      </ul>
+                </div>
+            </div>
+          </header>
+
+        
+         <div class="container-fluid bg-light wholebody" >
+          <div class="container bg-white mt-md-3 maincontent">
+              <div class="container">  
+               
+               <div class="row col-md-2 subtitle">Fun Game</div>
+               <hr>
+               <div class="row">
+                    <div class=" col-11 col-sm-11 col-md-4 col-lg-4">
+                       
+                        <div class="content">
+                            <img src="assets/images/1.JPG" class="img-fluid" alt="image 1"  >                                                
+                        </div>                      
+                                  
+                        
+                    </div>   <!--end of column-->    
+                    <div class=" col-11 col-sm-11 col-md-8 col-lg-8">
+                         <div class="row">
+                             <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                                    <span class="badge badge-info badge-primary">Current Word</span>
+                                    <br>  
+                                    <span id="currentWord">:</span>    
+                                    <br>
+                             </div>
+                             <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                                    <span class="badge badge-success">Success</span>
+                                    <br>
+                                    <p>Win : <span id="winCount"></span></p>    
+                                    <br>
+                             </div>
+
+                         </div>    <!--end of subrow-->    
+
+                         <div class="row">
+                                <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                                        <span class="badge badge-secondary">Guess History</span>   
+                                        <br> 
+                                        <p> Letters already guessed: <span id="guessedLetters"></span></p>   
+                                </div>
+                                <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                                        <span class="badge badge-warning">Warning</span>       
+                                        <br>                                  
+                                        <p> Remaining: <span id="remainingCount"></span></p>  
+                                </div>
+   
+                        </div>  <!--end of subrow-->    
+                    </div>    <!--end of column-->    
+                              
+               </div>    <!--end of row-->
+        
+
+            </div>  <!--end of container-->
+        </div>
+
+       </div>
+
+       <footer class="footer">
+          <div class="copyright">
+              <p>&#169 Copyright </p>
+          </div>
+       </footer>
+        
+
+        <script src="assets/javascript/game.js" async defer></script>
+    </body>
+</html>
