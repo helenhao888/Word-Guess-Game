@@ -10,6 +10,8 @@
     border:0px;
 }
 
+
+/*
 .linkitems{
     margin:auto;
 }
@@ -28,7 +30,7 @@ a:active{
     color:red;
 }
 
-
+*/
 .wholebody{
     
     background-image: url("../images/interlaced.png");
@@ -44,6 +46,29 @@ a:active{
 .maincontent{
     max-width:960px;
 }
+
+.subtitle{
+    font-family: "Georgia', Times, Times New Roman, serif";
+    color:#4aaaa5;
+    width: 100px;
+    height: 50px;
+    background-color:white;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 10s infinite;
+}
+
+/*add animation*/
+
+  /* Standard syntax */
+  .subtile {animation-timing-function: linear;}
+ 
+   
+  /* Standard syntax */
+  @keyframes mymove {
+    from {left: 0px;}
+    to {left: 80%;}
+  }
 
 .wholebody:after {
 content:"";
