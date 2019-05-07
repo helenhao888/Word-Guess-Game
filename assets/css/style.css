@@ -1,15 +1,22 @@
 .myname{
-    background-color:#4aaaa5;
+    background-color:white;
     font-weight:bold;
-    color:white;
+    color:orange;
     padding:10px;  
     height:auto;
     font-family: 'Georgia', Times, Times New Roman, serif;
-    font-size:32px;
+    font-size:36px;
+    text-shadow: blue 0 -2px;
     text-transform:uppercase;
     border:0px;
 }
 
+.btn-info{
+float:right;
+margin-top : 20px;
+margin-inline-start:30px;
+background:rgb(114, 223, 26);
+}
 
 /*
 .linkitems{

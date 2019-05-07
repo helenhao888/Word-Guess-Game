@@ -14,27 +14,15 @@
     
         <header class="container">
             <div class="row">
-                <div class="col-12 col-sm-10 col-md-5 col-lg-5 offset-md-1">
+                <div class="col-12 col-sm-10 col-md-6 col-lg-6 offset-md-1">
                         <button type="button" class="btn btn-primary btn-lg myname">Word Guess</button>
                 </div>
-                <div class="col-12 col-sm-10 col-md-5 col-lg-5 justify-content-end">
+                <div class="col-12 col-sm-10 col-md-4 col-lg-4 justify-content-end">
             
                  
                         <button class="btn btn-info justify-content-end" onclick="clickFunction()"> Rules</button>
                         <button class="btn btn-info startBtn justify-content-end" onclick="startFunction()"> Start </button>
-                 <!--     <ul class="nav justify-content-end ">
-                          <li class="nav-item">
-                            <a class="nav-link active" href="#">About</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Rule</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                          </li>
-                          
-                      </ul> -->
-                     
+                                     
                 </div>
             </div>
           </header>
@@ -50,14 +38,14 @@
                     <div class=" col-11 col-sm-11 col-md-4 col-lg-4">
                        
                         <div class="content">
-                            <img src="assets/images/1.JPG" class="img-fluid" alt="image 1"  >                                                
+                            <img src="assets/images/1.JPG" class="img-fluid" id="imgPresent" alt="image 1"  >                                                
                         </div>                      
                                   
                         
                     </div>   <!--end of column-->    
-                    <div class=" col-11 col-sm-11 col-md-8 col-lg-8">
+                    <div class=" col-12 col-sm-12 col-md-8 col-lg-8">
                          <div class="row">
-                             <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                             <div class="col-7 col-sm-7 col-md-5 col-lg-5">
                                     <span class="badge badge-info badge-primary">Current Word</span>
                                     <br>  
                                     <p>Hints: </p>
@@ -66,7 +54,7 @@
                                     
                                     <br>
                              </div>
-                             <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                             <div class="col-5 col-sm-5 col-md-3 col-lg-3">
                                     <span class="badge badge-success">Success</span>
                                     <br>
                                     <p>Win : <span id="winCount"></span></p>    
@@ -76,12 +64,12 @@
                          </div>    <!--end of subrow-->    
 
                          <div class="row">
-                                <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                                <div class="col-7 col-sm-7 col-md-5 col-lg-5">
                                         <span class="badge badge-secondary">Guess History</span>   
                                         <br> 
                                         <p> Letters already guessed: <span id="guessedLetters"></span></p>   
                                 </div>
-                                <div class="col-6 col-sm-5 col-md-4 col-lg-4">
+                                <div class="col-5 col-sm-5 col-md-3 col-lg-3">
                                         <span class="badge badge-warning">Warning</span>       
                                         <br>                                  
                                         <p> Remaining: <span id="remainingCount"></span></p>  
@@ -91,7 +79,13 @@
                     </div>    <!--end of column-->    
                               
                </div>    <!--end of row-->
-        
+                <div class="row">
+                    <div class=" col-11 col-sm-11 col-md-4 col-lg-4">
+                    <audio id="myAudio">              
+                        <source src="assets/audio/harp.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
 
             </div>  <!--end of container-->
         </div>
