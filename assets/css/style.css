@@ -15,32 +15,14 @@
 float:right;
 margin-top : 20px;
 margin-inline-start:30px;
-background:rgb(114, 223, 26);
+background:plum;
 }
 
-/*
-.linkitems{
-    margin:auto;
-}
-a:link{
-    color:blue;
-    }
-a:visited{
-    color:palevioletred;
-    }
-a:hover{
-    background-color:yellow;
-    
-}
 
-a:active{
-    color:red;
-}
 
-*/
 .wholebody{
     
-    background-image: url("../images/interlaced.png");
+    background-image: url("../images/background.png");
     background-color:#ffffff;
     top: 15px;
     width: 100%; 
