@@ -148,7 +148,7 @@ var guessGame = {
     imgId.src=("assets/images/success.png");
     imgId.style.height="150px";
     imgId.style.width="200px";
-    document.getElementById("myAudio").play();
+    document.getElementById("successAudio").play();
     alert("You Win!!! Please select start key to start a new game. Good Luck!");
     },
 
@@ -162,7 +162,7 @@ var guessGame = {
      imgId.src=("assets/images/lose.png");
      imgId.style.height="150px";
      imgId.style.width="200px";
-     document.getElementById("myAudio").play();
+     document.getElementById("loseAudio").play();
      
      alert("Game over , press the start button to restart");
     }

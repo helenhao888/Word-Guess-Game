@@ -43,7 +43,7 @@
                     </div>   <!--end of column-->    
                     <div class=" col-12 col-sm-12 col-md-8 col-lg-8">
                          <div class="row">
-                             <div class="col-7 col-sm-7 col-md-5 col-lg-5">
+                             <div class="col-8 col-sm-8 col-md-8 col-lg-8">
                                     <span class="badge badge-info badge-primary">Current Word</span>
                                     <br>  
                                     <p>Hints: </p>
@@ -52,7 +52,7 @@
                                     
                                     <br>
                              </div>
-                             <div class="col-5 col-sm-5 col-md-3 col-lg-3">
+                             <div class="col-4 col-sm-4 col-md-4 col-lg-4">
                                     <span class="badge badge-success">Success</span>
                                     <br>
                                     <p>Win : <span id="winCount"></span></p>    
@@ -62,12 +62,12 @@
                          </div>    <!--end of subrow-->    
 
                          <div class="row">
-                                <div class="col-7 col-sm-7 col-md-5 col-lg-5">
+                                <div class="col-8 col-sm-8 col-md-8 col-lg-8">
                                         <span class="badge badge-secondary">Guess History</span>   
                                         <br> 
                                         <p> Letters already guessed: <span id="guessedLetters"></span></p>   
                                 </div>
-                                <div class="col-5 col-sm-5 col-md-3 col-lg-3">
+                                <div class="col-4 col-sm-4 col-md-4 col-lg-4">
                                         <span class="badge badge-warning">Warning</span>       
                                         <br>                                  
                                         <p> Remaining: <span id="remainingCount"></span></p>  
@@ -79,11 +79,18 @@
                </div>    <!--end of row-->
                 <div class="row">
                     <div class=" col-11 col-sm-11 col-md-4 col-lg-4">
-                    <audio id="myAudio">              
-                        <source src="assets/audio/harp.wav" type="audio/mpeg">
+                    <audio id="successAudio">              
+                        <source src="assets/audio/success.wav" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
-                </div>
+                </div>  <!--end of row-->
+                <div class="row">
+                    <div class=" col-11 col-sm-11 col-md-4 col-lg-4">
+                    <audio id="loseAudio">              
+                        <source src="assets/audio/lose.wav" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>  <!--end of row-->
 
             </div>  <!--end of container-->
         </div>
