@@ -62,7 +62,7 @@ var guessGame = {
         var wordId=this.pickRandomWord();
         this.currentWord=this.wordLibrary[wordId];
 
-        console.table("curent word "+this.currentWord);
+        console.table("current word "+this.currentWord);
       
         len =  this.currentWord.length;
         initResult =[];
@@ -133,7 +133,7 @@ var guessGame = {
     return rand;
 },
 
-// sucessfully guessed all words, game over and can restart again 
+// Successfully guessed all words, game over, present win image and play sound, then can restart again 
     successProcess: function(){
     console.log("succeeded");
     imgId = document.getElementById("imgPresent");
