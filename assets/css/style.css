@@ -47,6 +47,49 @@ background:plum;
     animation: mymove 10s infinite;
 }
 
+/* The Modal (background) */
+.modalF,.modalS {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 300px;
+    top: 150px;
+    width: 30%; /* Full width */
+    height: 25%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+ /*   background-color: rgb(0,0,0); /* Fallback color */
+    background-color:gray; /* Black w/ opacity */
+  }
+  
+  /* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    
+    
+  }
+  
+
+  /* Modal Body */
+  .modal-body {padding: 2px 16px;}
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color:goldenrod;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    height:40%;
+  }
+
+  /* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
+
 /*add animation*/
 
   /* Standard syntax */
@@ -68,8 +111,7 @@ display:block;
 height:40px;
 }
 
-
-    
+   
 
 .row, 
 .row> .column

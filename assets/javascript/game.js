@@ -8,6 +8,7 @@ var imgId;
 
 
 
+
 //object definition
 var guessGame = {
     currentWord: "",
@@ -32,19 +33,21 @@ var guessGame = {
 
   
     newGame: function(){
-        console.log("new gate start win times",this.winTimes);
+      
+        //check if it's the first word to guess
         if (this.round === 1 ){
-            console.log("round 1");
+           
             this.winTimes = 0;
             this.remainingTimes = 20;
             gameFlag = true;
+          
             guessHistory=[];
           
            var imgId = document.getElementById("imgPresent");
            imgId.src=("assets/images/newgame.jpg");
         }
         
-        console.log("round win"+ this.round+" " + this.winTimes);
+        
         this.currentWord = "";      
         this.historyNum = 0;
        // this.guessHistory = "";  
@@ -70,27 +73,30 @@ var guessGame = {
              
         document.getElementById("currentWord").innerHTML = initResult;
         this.displayArray=initResult;
-        console.log("display ", this.displayArray);
+    
+        
         
     },
 
    wordGuessProcess: function(userLetter){
     
-        console.log(" word process remaining",this.remainingTimes);
+      
+    
         if (this.remainingTimes <= 0) {
-            console.log("fail display")
+          
+            
              //  call fail process
             this.failProcess();
            
         } else if (this.remainingTimes >0 && this.remainingTimes <= 20 ){
-            console.log("guess process");
+           
               
             if (userLetter === this.currentWord[this.inputNum-1]){
-                console.log("guess good ", userLetter);                 
+                              
                 this.displayArray[this.inputNum-1] = userLetter;         
            
                 document.getElementById("currentWord").innerHTML = this.displayArray;
-              
+                
                 if (this.inputNum === this.currentWord.length ){     
                    //when add to current word's length, it means user guesses this word successfully,  winTimes +1              
                    this.winTimes++;      
@@ -98,22 +104,18 @@ var guessGame = {
                    this.round++;
                    guessHistory=[];
                    guessedLetId.innerHTML=guessHistory;
-                   console.log("in word process wintimes ",this.winTimes);
-                   console.log(" word process remaining times ", this.remainingTimes);
+                  
                 }
                 
             }
             
         else{
             // Input letter not matched process
-                console.log("not matched");
-                console.log("in word process else wintimes ",this.winTimes);
-                   console.log(" word process else remaining times ", this.remainingTimes);
+                
                 this.remainingTimes--;
                 //inptNum stores the correct input number of the letters    
                 this.inputNum--;
-                console.log("in word process else wintimes ",this.winTimes);
-                console.log(" word process else before display remaining times ", this.remainingTimes);
+                
                 document.getElementById("remainingCount").innerHTML =  this.remainingTimes;
                 //add letter guessed
                 this.addHistory(userLetter);
@@ -130,7 +132,7 @@ var guessGame = {
    pickRandomWord: function () {        
        
     var  rand = Math.floor(Math.random()* randomConst);
-    console.log(rand);
+  
     return rand;
 },
 
@@ -149,11 +151,12 @@ var guessGame = {
     imgId.style.height="150px";
     imgId.style.width="200px";
     document.getElementById("successAudio").play();
-    alert("You Win!!! Please select start key to start a new game. Good Luck!");
+    popupProcess();
+    
     },
 
     failProcess: function(){
-     console.log("failure");
+     
           
      //set gameFlag to false 
      gameFlag = false;
@@ -162,12 +165,45 @@ var guessGame = {
      imgId.src=("assets/images/lose.png");
      imgId.style.height="150px";
      imgId.style.width="200px";
-     document.getElementById("loseAudio").play();
-     
-     alert("Game over , press the start button to restart");
-    }
+     document.getElementById("loseAudio").play();    
+     popupProcess();
+   
 
-}
+    }
+}   //end of object 
+
+
+function popupProcess(){
+      // Get the modal
+     
+      var modal, span;
+       if (gameFlag ){
+        modal = document.getElementById('myModalSuccess');
+        // Get the <span> element that closes the modal
+        span = document.getElementsByClassName("closesuccess")[0];
+       }else{
+        modal = document.getElementById('myModalFail');   
+        span = document.getElementsByClassName("closefail")[0];
+       }
+
+     
+         //  open the modal 
+         modal.style.display = "block";
+       
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        
+               modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+           
+        if (event.target !== modal) {
+            modal.style.display = "none";
+        }
+        }
+    }
 
 //start the game 
 function startClickFunction() {
@@ -189,16 +225,15 @@ document.onkeyup = function(event){
         var userGuess = event.key.toLowerCase();
     // each time , user input a letter, input letter number add 1    
         guessGame.inputNum++;
-        console.log("key up input num",guessGame.inputNum);
-        console.log("key up round",guessGame.round);
+        
         if (guessGame.round <= maxRound){
 
-            console.log("key up word len",guessGame.currentWord.length);
+            
             if (guessGame.inputNum <= guessGame.currentWord.length ){
                 guessGame.wordGuessProcess(userGuess);
             } else{
                 
-                console.log("else  start new word");
+                
                 guessGame.newGame();
             }
         } else{
@@ -206,7 +241,8 @@ document.onkeyup = function(event){
             guessGame.successProcess();
         }
     } else{
-        alert("game over, press start button ");
+     //   alert("game over, press start button ");
+            popupProcess();
     }
 }
 
