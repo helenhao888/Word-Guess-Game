@@ -151,7 +151,7 @@ var guessGame = {
     imgId.style.height="150px";
     imgId.style.width="200px";
     document.getElementById("successAudio").play();
-    popupProcess();
+    this.popupProcess();
     
     },
 
@@ -166,44 +166,46 @@ var guessGame = {
      imgId.style.height="150px";
      imgId.style.width="200px";
      document.getElementById("loseAudio").play();    
-     popupProcess();
+     this.popupProcess();
    
 
-    }
+    },
+
+    popupProcess: function(){
+        // Get the modal
+       
+        var modal, span;
+         if (gameFlag ){
+          modal = document.getElementById('myModalSuccess');
+          // Get the <span> element that closes the modal
+          span = document.getElementsByClassName("closesuccess")[0];
+         }else{
+          modal = document.getElementById('myModalFail');   
+          span = document.getElementsByClassName("closefail")[0];
+         }
+  
+       
+           //  open the modal 
+           modal.style.display = "block";
+         
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+          
+                 modal.style.display = "none";
+          }
+  
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+             
+          if (event.target !== modal) {
+              modal.style.display = "none";
+          }
+          }
+      }
+  
 }   //end of object 
 
 
-function popupProcess(){
-      // Get the modal
-     
-      var modal, span;
-       if (gameFlag ){
-        modal = document.getElementById('myModalSuccess');
-        // Get the <span> element that closes the modal
-        span = document.getElementsByClassName("closesuccess")[0];
-       }else{
-        modal = document.getElementById('myModalFail');   
-        span = document.getElementsByClassName("closefail")[0];
-       }
-
-     
-         //  open the modal 
-         modal.style.display = "block";
-       
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-        
-               modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-           
-        if (event.target !== modal) {
-            modal.style.display = "none";
-        }
-        }
-    }
 
 //start the game 
 function startClickFunction() {
@@ -242,7 +244,7 @@ document.onkeyup = function(event){
         }
     } else{
      //   alert("game over, press start button ");
-            popupProcess();
+            guessGame.popupProcess();
     }
 }
 
